@@ -1,80 +1,58 @@
-import re
 
-# ==========================================
-# Mini-project — Text Analyzer
-# ==========================================
+n = int(input("Nhập số lượng môn học: "))
 
-# Nhập text
-text = input("Nhập một đoạn text: ")
+subjects = []
+total_points = 0
+total_credits = 0
 
-# Xử lý text rỗng
-if text.strip() == "":
-    print("Text rỗng!")
+
+for i in range(n):
+    print(f"\n--- Môn {i + 1} ---")
+
+    name = input("Tên môn: ")
+    credits = int(input("Số tín chỉ: "))
+    score_10 = float(input("Điểm (0-10): "))
+
+
+    while score_10 < 0 or score_10 > 10:
+        print("Điểm phải từ 0 đến 10!")
+        score_10 = float(input("Nhập lại điểm: "))
+
+  
+    score_4 = score_10 * 4 / 10
+
+
+    subjects.append([name, credits, score_10, score_4])
+
+    total_points += score_4 * credits
+    total_credits += credits
+
+gpa = total_points / total_credits
+
+
+if gpa >= 3.6:
+    rank = "Xuất sắc"
+elif gpa >= 3.2:
+    rank = "Giỏi"
+elif gpa >= 2.5:
+    rank = "Khá"
+elif gpa >= 2.0:
+    rank = "Trung bình"
 else:
-    # ==========================================
-    # 1. Chuẩn hóa text
-    # ==========================================
+    rank = "Không đạt"
 
-    # Xóa khoảng trắng đầu/cuối
-    clean_text = text.strip()
+print("\n" + "=" * 65)
+print("                 BẢNG KẾT QUẢ GPA")
+print("=" * 65)
 
-    # Chuyển thành chữ thường
-    clean_text = clean_text.lower()
+print(f"{'Môn học':<25}{'TC':<8}{'Điểm 10':<12}{'Điểm 4':<10}")
+print("-" * 65)
 
-    # Tách thành các từ
-    words = clean_text.split()
+for subject in subjects:
+    print(f"{subject[0]:<25}{subject[1]:<8}{subject[2]:<12.2f}{subject[3]:<10.2f}")
 
-    # Ghép lại bằng một khoảng trắng
-    normalized_text = " ".join(words)
-
-    print("\n===== TEXT SAU KHI CHUẨN HÓA =====")
-    print(normalized_text)
-
-    # ==========================================
-    # 2. Đếm ký tự
-    # ==========================================
-
-    character_count = len(normalized_text)
-
-    # ==========================================
-    # 3. Đếm từ
-    # ==========================================
-
-    word_count = len(words)
-
-    # ==========================================
-    # 4. Đếm keyword
-    # ==========================================
-
-    keyword = input("\nNhập keyword cần tìm: ")
-
-    keyword = keyword.strip().lower()
-
-    keyword_count = normalized_text.count(keyword)
-
-    # ==========================================
-    # 5. Tìm Course Code bằng Regex
-    # Ví dụ: PJ-101, PJ-202
-    # ==========================================
-
-    course_codes = re.findall(
-        r"\b[A-Z]{2}-\d{3}\b",
-        text.upper()
-    )
-
-    # ==========================================
-    # 6. Hiển thị thống kê
-    # ==========================================
-
-    print("\n===== THỐNG KÊ =====")
-
-    print("Số ký tự:", character_count)
-
-    print("Số từ:", word_count)
-
-    print(
-        f"Số lần keyword '{keyword}' xuất hiện:",
-        keyword_count
-    )
-
-    print("Course codes:", course_codes)
+print("-" * 65)
+print(f"Tổng tín chỉ: {total_credits}")
+print(f"GPA: {gpa:.2f}")
+print(f"Xếp loại: {rank}")
+print("=" * 65)
