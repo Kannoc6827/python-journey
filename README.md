@@ -1,17 +1,18 @@
-# Máy tính điểm GPA 📊
+# Text Analyzer 📝
 
-Nhập điểm các môn → tính GPA → xếp loại → hiển thị kết quả.
+Phân tích văn bản chi tiết.
 
 ## Yêu cầu
-1. Nhập số lượng môn học
-2. Với mỗi môn: nhập tên môn, số tín chỉ, điểm (0-10)
-3. Tính GPA theo công thức: Σ(điểm × tín chỉ) / Σ tín chỉ
-4. Xếp loại: >= 3.6 Xuất sắc, >= 3.2 Giỏi, >= 2.5 Khá, >= 2.0 TB
-5. In bảng kết quả đẹp
+1. Nhập đoạn văn bản (hoặc đọc từ file)
+2. Đếm: số ký tự, số từ, số câu
+3. Tìm từ dài nhất, từ ngắn nhất
+4. Đếm tần suất mỗi từ → in top 5 từ xuất hiện nhiều nhất
+5. In thống kê tổng hợp
 
 ## Gợi ý
-- Dùng if/elif/else cho xếp loại
-- Chuyển điểm 10 → thang 4: điểm_4 = điểm_10 * 4 / 10
+- Dùng `split()` để tách từ
+- Dùng `lower()` trước khi đếm
+- Dùng dict để đếm tần suất
 
 ## Nộp bài
-Hoàn thành code và commit lên GitHub với message: `"Complete mini-project week 03"`
+Hoàn thành code và commit lên GitHub với message: `"Complete mini-project week 04"`
