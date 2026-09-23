@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEAUTY STORE - Beauty starts with you ✨</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <i class="fas fa-magic"></i> BEAUTY STORE
+            </a>
+
+            <!-- Search -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Tìm kiếm mỹ phẩm, thương hiệu, sản phẩm...">
+                <button id="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button class="action-btn" id="wishlist-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="badge" id="wishlist-badge">0</span>
+                </button>
+                <button class="action-btn" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge" id="cart-badge">0</span>
+                </button>
+                <button class="action-btn">
+                    <i class="far fa-user"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="nav-menu">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#" class="active">Trang chủ</a></li>
+                <li><a href="#categories">Danh mục</a></li>
+                <li><a href="#" data-filter="Trang điểm">Trang điểm</a></li>
+                <li><a href="#" data-filter="Chăm sóc da">Chăm sóc da</a></li>
+                <li><a href="#" data-filter="Chăm sóc tóc">Chăm sóc tóc</a></li>
+                <li><a href="#" data-filter="Body">Body</a></li>
+                <li><a href="#" data-filter="Nước hoa">Nước hoa</a></li>
+                <li><a href="#">Thương hiệu</a></li>
+                <li><a href="#" class="highlight">Khuyến mãi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="carousel-container" id="hero-carousel">
+                <!-- Banners will be injected here via JS -->
+            </div>
+            <button class="carousel-btn prev" id="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn next" id="carousel-next"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-indicators" id="carousel-indicators"></div>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="section" id="categories">
+            <div class="container">
+                <h2 class="section-title">Danh mục nổi bật</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-cat="Trang điểm">
+                        <div class="cat-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>Trang điểm</h3>
+                    </div>
+                    <div class="category-card" data-cat="Son môi">
+                        <div class="cat-icon"><i class="fas fa-kiss"></i></div>
+                        <h3>Son môi</h3>
+                    </div>
+                    <div class="category-card" data-cat="Chăm sóc da">
+                        <div class="cat-icon"><i class="fas fa-spa"></i></div>
+                        <h3>Chăm sóc da</h3>
+                    </div>
+                    <div class="category-card" data-cat="Body">
+                        <div class="cat-icon"><i class="fas fa-bath"></i></div>
+                        <h3>Body</h3>
+                    </div>
+                    <div class="category-card" data-cat="Chống nắng">
+                        <div class="cat-icon"><i class="fas fa-sun"></i></div>
+                        <h3>Chống nắng</h3>
+                    </div>
+                    <div class="category-card" data-cat="Làm sạch">
+                        <div class="cat-icon"><i class="fas fa-pump-soap"></i></div>
+                        <h3>Làm sạch</h3>
+                    </div>
+                    <div class="category-card" data-cat="Chăm sóc tóc">
+                        <div class="cat-icon"><i class="fas fa-spray-can"></i></div>
+                        <h3>Chăm sóc tóc</h3>
+                    </div>
+                    <div class="category-card" data-cat="Nước hoa">
+                        <div class="cat-icon"><i class="fas fa-wind"></i></div>
+                        <h3>Nước hoa</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flash Sale -->
+        <section class="section flash-sale-bg">
+            <div class="container">
+                <div class="flash-sale-header">
+                    <div class="flash-title">
+                        <h2><i class="fas fa-bolt"></i> FLASH SALE</h2>
+                    </div>
+                    <div class="countdown">
+                        <span>Kết thúc sau:</span>
+                        <div class="timer" id="flash-timer">
+                            <span class="time-box">02</span> : <span class="time-box">15</span> : <span class="time-box">43</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-grid flash-sale-grid" id="flash-sale-products">
+                    <!-- Flash Sale Products -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Product Section with Sidebar -->
+        <section class="section">
+            <div class="container">
+                <div class="main-layout">
+                    <!-- Sidebar Filter -->
+                    <aside class="sidebar">
+                        <div class="filter-group">
+                            <h3 class="filter-title">Danh mục</h3>
+                            <ul class="filter-list" id="cat-filter">
+                                <li><label><input type="radio" name="category" value="Tất cả" checked> Tất cả</label></li>
+                                <li><label><input type="radio" name="category" value="Son môi"> Son môi</label></li>
+                                <li><label><input type="radio" name="category" value="Kem nền"> Kem nền</label></li>
+                                <li><label><input type="radio" name="category" value="Cushion"> Cushion</label></li>
+                                <li><label><input type="radio" name="category" value="Chăm sóc da"> Chăm sóc da</label></li>
+                                <li><label><input type="radio" name="category" value="Chăm sóc tóc"> Chăm sóc tóc</label></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title">Khoảng giá</h3>
+                            <ul class="filter-list" id="price-filter">
+                                <li><label><input type="radio" name="price" value="all" checked> Tất cả</label></li>
+                                <li><label><input type="radio" name="price" value="under100"> Dưới 100.000đ</label></li>
+                                <li><label><input type="radio" name="price" value="100to300"> 100.000đ - 300.000đ</label></li>
+                                <li><label><input type="radio" name="price" value="300to500"> 300.000đ - 500.000đ</label></li>
+                                <li><label><input type="radio" name="price" value="above500"> Trên 500.000đ</label></li>
+                            </ul>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-title">Đánh giá</h3>
+                            <ul class="filter-list" id="rating-filter">
+                                <li><label><input type="radio" name="rating" value="all" checked> Tất cả</label></li>
+                                <li><label><input type="radio" name="rating" value="4"> ⭐ 4 trở lên</label></li>
+                                <li><label><input type="radio" name="rating" value="3"> ⭐ 3 trở lên</label></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Product Content -->
+                    <div class="product-content">
+                        <div class="content-header">
+                            <h2>✨ SẢN PHẨM DÀNH CHO BẠN</h2>
+                            <div class="sort-box">
+                                <span>Sắp xếp theo:</span>
+                                <select id="sort-select">
+                                    <option value="default">Mặc định</option>
+                                    <option value="price-asc">Giá thấp → cao</option>
+                                    <option value="price-desc">Giá cao → thấp</option>
+                                    <option value="best-seller">Bán chạy</option>
+                                    <option value="rating">Đánh giá cao</option>
+                                    <option value="discount">Giảm giá nhiều</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="product-grid main-grid" id="main-products">
+                            <!-- Main Products Injected Here -->
+                        </div>
+                        <div id="no-products-msg" class="hidden" style="text-align:center; padding: 2rem;">
+                            Không tìm thấy sản phẩm phù hợp.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-magic"></i> BEAUTY STORE</h3>
+                    <p>Slogan: Beauty starts with you ✨</p>
+                    <p>Chuyên cung cấp mỹ phẩm chính hãng, uy tín và chất lượng.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Về chúng tôi</h3>
+                    <ul>
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#">Chính sách bảo mật</a></li>
+                        <li><a href="#">Điều khoản sử dụng</a></li>
+                        <li><a href="#">Chính sách đổi trả</a></li>
+                        <li><a href="#">Chính sách giao hàng</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Hỗ trợ khách hàng</h3>
+                    <ul>
+                        <li>Hotline: 1900 1234</li>
+                        <li>Email: support@beautystore.vn</li>
+                        <li><a href="#">FAQ - Câu hỏi thường gặp</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Theo dõi chúng tôi</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BEAUTY STORE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals & Overlays -->
+    
+    <!-- Cart Drawer -->
+    <div class="overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Giỏ hàng của bạn</h3>
+            <button class="close-btn" id="close-cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart Items -->
+        </div>
+        <div class="cart-footer">
+            <div class="discount-code">
+                <input type="text" id="promo-input" placeholder="Nhập mã giảm giá">
+                <button id="apply-promo">ÁP DỤNG</button>
+            </div>
+            <div id="promo-msg" class="promo-msg"></div>
+            
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Tạm tính:</span>
+                    <span id="subtotal">0đ</span>
+                </div>
+                <div class="summary-row discount-row" id="discount-row" style="display:none;">
+                    <span>Giảm giá:</span>
+                    <span id="discount-amount">-0đ</span>
+                </div>
+                <div class="summary-row">
+                    <span>Phí vận chuyển:</span>
+                    <span id="shipping-fee">20.000đ</span>
+                </div>
+                <div class="summary-row total">
+                    <span>TỔNG:</span>
+                    <span id="total-price">0đ</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">THANH TOÁN</button>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content product-detail">
+            <span class="close-modal" id="close-product-modal"><i class="fas fa-times"></i></span>
+            <div class="product-detail-layout" id="product-detail-content">
+                <!-- Product content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content checkout-modal-content">
+            <span class="close-modal" id="close-checkout-modal"><i class="fas fa-times"></i></span>
+            <h2>Thanh toán đơn hàng</h2>
+            <form id="checkout-form" class="checkout-form">
+                <input type="text" placeholder="Họ tên" required>
+                <input type="tel" placeholder="Số điện thoại" required>
+                <input type="text" placeholder="Địa chỉ" required>
+                <input type="text" placeholder="Tỉnh / Thành phố" required>
+                <select required>
+                    <option value="">-- Phương thức thanh toán --</option>
+                    <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+                    <option value="ewallet">Ví điện tử</option>
+                    <option value="bank">Thẻ ngân hàng</option>
+                </select>
+                <button type="submit" class="checkout-submit-btn">ĐẶT HÀNG</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Virtual Try-On Modal (AR Camera) -->
+    <div class="modal" id="vto-modal">
+        <div class="modal-content vto-modal-content">
+            <span class="close-modal" id="close-vto-modal"><i class="fas fa-times"></i></span>
+            <h2>📷 Virtual Try-On</h2>
+            <p style="text-align:center; color: var(--text-light); margin-bottom:15px; font-size: 0.9rem;">
+                Hãy đưa khuôn mặt vào khung hình để thử màu.
+            </p>
+            
+            <div class="vto-video-container">
+                <video id="vto-video" autoplay playsinline></video>
+                <div class="vto-overlay" id="vto-overlay"></div>
+                <div class="vto-face-guide"></div> <!-- Face alignment guide -->
+                <canvas id="vto-canvas" style="display:none;"></canvas>
+            </div>
+
+            <div class="vto-swatches" id="vto-swatches">
+                <div class="vto-swatch" style="background-color: #ff4757;" data-color="rgba(255, 71, 87, 0.3)"></div>
+                <div class="vto-swatch" style="background-color: #ff6b81;" data-color="rgba(255, 107, 129, 0.3)"></div>
+                <div class="vto-swatch" style="background-color: #e056fd;" data-color="rgba(224, 86, 253, 0.3)"></div>
+                <div class="vto-swatch" style="background-color: #c0392b;" data-color="rgba(192, 57, 43, 0.3)"></div>
+                <div class="vto-swatch" style="background-color: #f39c12;" data-color="rgba(243, 156, 18, 0.3)"></div>
+            </div>
+
+            <div class="vto-actions">
+                <button class="btn-outline" id="vto-capture-btn"><i class="fas fa-camera"></i> Chụp ảnh</button>
+                <button class="btn-primary" id="vto-add-cart-btn"><i class="fas fa-shopping-cart"></i> Thêm vào giỏ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content text-center">
+            <span class="close-modal" id="close-success-modal"><i class="fas fa-times"></i></span>
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h2>🎉 ĐẶT HÀNG THÀNH CÔNG!</h2>
+            <p>Cảm ơn bạn đã mua hàng tại BEAUTY STORE ❤️</p>
+            <button class="checkout-submit-btn" style="margin-top:20px; width: auto; padding: 10px 30px;" id="continue-shopping">Tiếp tục mua sắm</button>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
